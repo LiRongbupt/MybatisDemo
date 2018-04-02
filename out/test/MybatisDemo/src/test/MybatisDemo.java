@@ -17,19 +17,27 @@ import java.util.List;
 public class MybatisDemo {
     private SqlSessionFactory sqlSessionFactory;
 
+    //创建会话工厂
     @Before
     public void init() throws IOException {
+        //配置文件
         String resource="SqlMapConfig.xml";
-
+        //加载配置文件到输入流中
         InputStream inputStream = Resources.getResourceAsStream(resource);
+        //创建会话工厂
         sqlSessionFactory=new SqlSessionFactoryBuilder().build(inputStream);
     }
 
+    //根据Id查找用户
     @Test
     public void testFindUserById() {
+        //通过工厂创建sqlSession
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
         User user =null;
+        //通过sqlSession操作数据库
+        //第一个参数：statement的位置，等于namespace+statementId
+        //第二个参数：传给占位符的参数
         try {
             user = sqlSession.selectOne("test.findUserById", 2);
         } catch (Exception e) {

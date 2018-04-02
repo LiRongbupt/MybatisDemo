@@ -2,7 +2,17 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+在mapper.xml文件中配置很多的sql语句，执行每个sql语句时，封装为MapperStatement对象
+mapper.xml以statement为单位管理sql语句
+-->
 <mapper namespace="test">
+    <!--
+    id：唯一标识符，标识一个statement
+    #{}：表示一个占位符，如果#{}中传入简单类型的参数，#{}中的名称随意
+    parameterType：输入参数的类型，通过#{}接收parameterType输入的参数
+    resultType：输出结果类型，不管返回是多条还是单条，指定单条记录映射的pojo类型
+    -->
     <select id="findUserById" parameterType="int" resultType="domain.User">
         select * from user where id=#{id}
     </select>
@@ -11,6 +21,15 @@
         SELECT * FROM USER WHERE username LIKE '%${value}%'
     </select>
 
+    <!--添加用户
+    parameterType：输入参数的类型
+    #{}接收pojo数据，可以使用OGNL解析出pojo属性值
+    #{username}表示从parameterType中获取pojo的属性值
+    selectKey：用于进行主键返回，定义了获取主键值的sql
+    order：设置selectKey中sql执行的顺序，相对于insert语句来说
+    keyProperty：将主键值设置到哪个属性
+    resultType：SELECT LAST_INSERT_ID()的结果类型
+    -->
     <insert id="insertUser" parameterType="domain.User">
         <selectKey keyProperty="id" order="AFTER" resultType="int">
             SELECT LAST_INSERT_ID()
