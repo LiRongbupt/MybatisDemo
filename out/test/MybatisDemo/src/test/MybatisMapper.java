@@ -1,13 +1,17 @@
 package test;
 
 import domain.User;
+import domain.UserCustom;
+import domain.UserQueryVo;
 import mapper.UserMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
+import sun.nio.cs.US_ASCII;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,7 +30,7 @@ public class MybatisMapper {
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
     }
 
-    @Test
+    @Ignore
     public void findUserById() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
@@ -37,7 +41,7 @@ public class MybatisMapper {
         System.out.println(user);
     }
 
-    @Test
+    @Ignore
     public void findUserByName() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
@@ -48,7 +52,7 @@ public class MybatisMapper {
         System.out.println(users);
     }
 
-    @Test
+    @Ignore
     public void insertUser() throws Exception {
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
@@ -65,5 +69,38 @@ public class MybatisMapper {
         sqlSession.commit();
         sqlSession.close();
 
+    }
+
+    @Test
+    public void findUserList() throws Exception{
+        SqlSession sqlSession=sqlSessionFactory.openSession();
+
+        UserMapper userMapper=sqlSession.getMapper(UserMapper.class);
+
+        UserQueryVo userQueryVo = new UserQueryVo();
+        UserCustom userCustom = new UserCustom();
+        userCustom.setUsername("son");
+        userQueryVo.setUserCustom(userCustom);
+        List<User> users = userMapper.findUserList(userQueryVo);
+
+        sqlSession.close();
+        System.out.println(users);
+    }
+
+    @Test
+    public void findUserCount() throws Exception{
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+        UserQueryVo userQueryVo=new UserQueryVo();
+        UserCustom userCustom = new UserCustom();
+
+        userCustom.setUsername("r");
+        userQueryVo.setUserCustom(userCustom);
+        int count = userMapper.findUserCount(userQueryVo);
+
+        sqlSession.close();
+        System.out.println("The count is + " + count);
     }
 }
