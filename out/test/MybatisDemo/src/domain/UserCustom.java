@@ -1,4 +1,4 @@
 package domain;
 
-public class UserCustom {
+public class UserCustom extends User {
 }

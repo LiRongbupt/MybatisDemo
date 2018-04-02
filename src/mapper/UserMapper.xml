@@ -17,4 +17,12 @@
         </selectKey>
         INSERT INTO USER VALUES (#{id}, #{username}, #{birthday}, #{sex}, #{address})
     </insert>
+
+    <select id="findUserList" parameterType="domain.UserQueryVo" resultType="domain.User">
+        SELECT * FROM USER WHERE username LIKE '%${userCustom.username}%'
+    </select>
+
+    <select id="findUserCount" parameterType="domain.UserQueryVo" resultType="int">
+        SELECT count(*) FROM user WHERE username like '%${userCustom.username}%'
+    </select>
 </mapper>
