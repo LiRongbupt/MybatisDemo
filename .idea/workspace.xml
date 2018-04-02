@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd4fe6c9-e9b5-4da0-bed4-334fcbe11b5d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MybatisDemo/test/MybatisDemo.class" afterPath="$PROJECT_DIR$/out/production/MybatisDemo/test/MybatisDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MybatisDemo/SqlMapConfig.xml" afterPath="$PROJECT_DIR$/out/production/MybatisDemo/SqlMapConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MybatisDemo/sqlmap/User.xml" afterPath="$PROJECT_DIR$/out/production/MybatisDemo/sqlmap/User.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/MybatisDemo/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/test/MybatisDemo/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/MybatisDemo/src/SqlMapConfig.xml" afterPath="$PROJECT_DIR$/out/test/MybatisDemo/src/SqlMapConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/MybatisDemo/src/sqlmap/User.xml" afterPath="$PROJECT_DIR$/out/test/MybatisDemo/src/sqlmap/User.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/MybatisDemo/src/test/MybatisDemo.java" afterPath="$PROJECT_DIR$/out/test/MybatisDemo/src/test/MybatisDemo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SqlMapConfig.xml" afterPath="$PROJECT_DIR$/src/SqlMapConfig.xml" />
-    </list>
+    <list default="true" id="cd4fe6c9-e9b5-4da0-bed4-334fcbe11b5d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,7 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.64405286">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="SqlMapConfig.xml" pinned="false" current-in-tab="false">
@@ -468,10 +458,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11048000" />
+    <option name="totallyTimeSpent" value="11443000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="32" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
