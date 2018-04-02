@@ -19,10 +19,31 @@
     </insert>
 
     <select id="findUserList" parameterType="domain.UserQueryVo" resultType="domain.User">
-        SELECT * FROM USER WHERE username LIKE '%${userCustom.username}%'
+        SELECT id, username, birthday FROM USER
+        <!--where标签相当于where关键字，可以自动去除第一个and-->
+        <where>
+            <!--如果userQueryVo中传入了查询条件，再进行sql拼接-->
+            <!--test中userCustom.username表示从userQueryVo读取属性值-->
+            <include refid="query_user_where"/>
+        </where>
     </select>
 
     <select id="findUserCount" parameterType="domain.UserQueryVo" resultType="int">
-        SELECT count(*) FROM user WHERE username like '%${userCustom.username}%'
+        SELECT count(*) FROM USER
+        <where>
+            <include refid="query_user_where"/>
+        </where>
     </select>
+
+    <sql id="query_user_where">
+        <if test="userCustom!=null">
+            <if test="userCustom.username!=null and userCustom.username!=''">
+                AND username LIKE '%${userCustom.username}%'
+            </if>
+
+            <if test="userCustom.sex!=null and userCustom.sex!=''">
+                AND sex=#{userCustom.sex}
+            </if>
+        </if>
+    </sql>
 </mapper>
