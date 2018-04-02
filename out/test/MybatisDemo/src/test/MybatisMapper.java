@@ -100,7 +100,7 @@ public class MybatisMapper {
         int count = userMapper.findUserCount(userQueryVo);
 
         sqlSession.close();
-        System.out.println("The count is + " + count);
+        System.out.println("The count is " + count);
     }
 
 
