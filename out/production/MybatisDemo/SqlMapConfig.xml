@@ -20,5 +20,6 @@
     <!--加载mapper.xml-->
     <mappers>
         <mapper resource="mapper/UserMapper.xml"/>
+        <mapper resource="mapper/OrdersMapperCustom.xml"/>
     </mappers>
 </configuration>

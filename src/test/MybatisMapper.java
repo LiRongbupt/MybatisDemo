@@ -11,7 +11,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import sun.nio.cs.US_ASCII;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -71,7 +70,7 @@ public class MybatisMapper {
 
     }
 
-    @Test
+    @Ignore
     public void findUserList() throws Exception{
         SqlSession sqlSession=sqlSessionFactory.openSession();
 
@@ -101,6 +100,9 @@ public class MybatisMapper {
         int count = userMapper.findUserCount(userQueryVo);
 
         sqlSession.close();
-        System.out.println("The count is + " + count);
+        System.out.println("The count is " + count);
     }
+
+
+
 }
