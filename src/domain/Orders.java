@@ -8,6 +8,7 @@ public class Orders {
     private String number;
     private Date createtime;
     private String note;
+    private User user;
 
     public Integer getId() {
         return id;

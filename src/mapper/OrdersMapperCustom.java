@@ -1,9 +1,13 @@
 package mapper;
 
 import domain.OrderCustom;
+import domain.Orders;
 
 import java.util.List;
 
 public interface OrdersMapperCustom {
-    public List<OrderCustom> findOrderUserList() throws Exception;
+    List<OrderCustom> findOrderUserList() throws Exception;
+
+    List<Orders> findOrderUserListResultMap() throws Exception;
+
 }
